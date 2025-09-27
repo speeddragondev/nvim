@@ -93,5 +93,9 @@ return {
       -- Example: keymap for custom prompt
       vim.keymap.set('n', '<leader>oe', function() require('opencode').prompt('Explain @cursor and its context') end, { desc = 'Explain this code' })
     end,
+  },
+  {
+    'wakatime/vim-wakatime',
+    lazy = false 
   }
 }
