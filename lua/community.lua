@@ -10,7 +10,7 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.colorscheme.everforest" },
-  { import = "astrocommunity.completion.blink-cmp" },
+  { import = "astrocommunity.completion.coq_nvim" },
   { import = "astrocommunity.fuzzy-finder.telescope-nvim" },
   { import = "astrocommunity.lsp.coc-nvim" },
   { import = "astrocommunity.motion.harpoon" },
