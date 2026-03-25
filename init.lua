@@ -24,5 +24,22 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+
+vim.g.coq_settings = {
+  keymap = {
+    pre_select = true,
+    recommended = false,
+  },
+},
+vim.api.nvim_set_keymap('i', '<Esc>', [[pumvisible() ? "\<C-e><Esc>" : "\<Esc>"]], { expr = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-c>', [[pumvisible() ? "\<C-e><C-c>" : "\<C-c>"]], { expr = true, silent = true })
+vim.api.nvim_set_keymap('i', '<BS>', [[pumvisible() ? "\<C-e><BS>" : "\<BS>"]], { expr = true, silent = true })
+vim.api.nvim_set_keymap(
+  "i",
+  "<CR>",
+  [[pumvisible() ? (complete_info().selected == -1 ? "\<C-e><CR>" : "\<C-y>") : "\<CR>"]],
+  { expr = true, silent = true }
+)
+
+
 require "lazy_setup"
-require "polish"

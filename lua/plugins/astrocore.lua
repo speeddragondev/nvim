@@ -5,7 +5,6 @@
 
 ---@type LazySpec
 return {
-  "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
     -- Configure core features of AstroNvim
@@ -21,19 +20,6 @@ return {
     diagnostics = {
       virtual_text = true,
       underline = true,
-    },
-    -- passed to `vim.filetype.add`
-    filetypes = {
-      -- see `:h vim.filetype.add` for usage
-      extension = {
-        foo = "fooscript",
-      },
-      filename = {
-        [".foorc"] = "fooscript",
-      },
-      pattern = {
-        [".*/etc/foo/.*"] = "fooscript",
-      },
     },
     -- vim options can be configured here
     options = {
@@ -59,9 +45,10 @@ return {
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs
+        ["<Leader><Tab>"] = { desc = "Movement" },
         ["<Leader><Tab>l"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["<Leader><Tab>h"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
-        ["<Leader>o"] = { false },
+        -- ["<Leader>o"] = { false },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {

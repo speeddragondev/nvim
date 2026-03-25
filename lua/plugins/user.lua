@@ -1,7 +1,3 @@
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
--- Here are some examples:
-
 ---@type LazySpec
 return {
 
@@ -26,7 +22,21 @@ return {
     },
   },
   {
-    "rebelot/kanagawa.nvim"
+    "ms-jpq/coq_nvim",
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      require("kanagawa").load("wave")
+    end,
+  },
+  {
+    "okuuva/auto-save.nvim",
+    cmd = "ASToggle", -- optional for lazy loading on command
+    event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
+    opts = {
+      debounce_delay = 8,
+    },
   },
   {
     "L3MON4D3/LuaSnip",
